@@ -1,8 +1,8 @@
 [theme]
-theme = "mytheme"
+theme = "space-villain"
 
 [icons]
-icons = "myicons"
+icons = "material-nf"
 
 [[block]]
 block = "music"
@@ -43,9 +43,9 @@ device = "intel_backlight"
 
 [[block]]
 block = "battery"
-format = " $icon  $percentage "
+format = " $icon $percentage "
 interval=2
-full_format=" $icon  100% "
+full_format=" $icon 100% "
 
 [[block]]
 block = "time"
