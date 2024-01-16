@@ -5,6 +5,12 @@ theme = "space-villain"
 icons = "material-nf"
 
 [[block]]
+block = "custom"
+# command = "echo 'Posture Check'"
+command = "echo '{\"icon\":\"weather_thunder\",\"state\":\"Good\", \"text\": \"Posture Check\"}'"
+json = true
+
+[[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:20,rot_interval:0.5)}"
 format_alt = " $icon "
@@ -23,13 +29,8 @@ disconnected_format = ""
 
 [[block]]
 block = "net"
-format = " ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K)"
+format = " ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K)"
 format_alt = " $icon {$signal_strength $ssid}"
-
-[[block]]
-block = "memory"
-format = " $icon $mem_total_used_percents.eng(w:2)"
-format_alt = "$icon_swap $swap_used_percents.eng(w:2)"
 
 [[block]]
 block = "sound"
@@ -40,12 +41,13 @@ cmd = "pavucontrol"
 [[block]]
 block = "backlight"
 device = "intel_backlight"
+format = "$icon$brightness "
 
 [[block]]
 block = "battery"
-format = " $icon $percentage "
+format = "$icon$percentage"
 interval=2
-full_format=" $icon 100% "
+full_format="$icon 100%"
 
 [[block]]
 block = "time"
